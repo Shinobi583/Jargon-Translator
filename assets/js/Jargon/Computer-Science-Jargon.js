@@ -14,17 +14,23 @@ let jargon = Object.keys(jargonWords);
 
 function translate()
 {
-    for (let i = 0; i < allText.length; i++)
+    for (let i = 0; i < text.length; i++)
     {
-        let word = allText[i];
-        let wordRegExp = new RegExp(word, 'gi');
-        for (let j = 0; j < jargon.length; j++)
+        let element = text[i];
+        let allText = element.innerText.toLowerCase().split(" ");
+        for (let k = 0; k < allText.length; k++)
         {
-            let val = jargonWords[jargon[j]];
-            if (allText[i] === jargon[j])
+            let word = allText[k];
+            let wordRegExp = new RegExp(word, 'gi');
+            for (let j = 0; j < jargon.length; j++)
             {
-                document.body.innerHTML = document.body.innerHTML.replace(wordRegExp, val);
+                let val = jargonWords[jargon[j]];
+                if (word === jargon[j])
+                {
+                    document.body.innerHTML = document.body.innerHTML.replace(wordRegExp, val);
+                }
             }
         }
+
     }
 }
