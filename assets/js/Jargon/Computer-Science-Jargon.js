@@ -2,21 +2,30 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     translate();
 });
 
-const text = document.querySelectorAll("h1, h2, h3, h4, h5, h6, span, a, p, li, td, caption");
+const TEXT = document.querySelectorAll("h1, h2, h3, h4, h5, h6, span, a, p, li, td, caption");
 
 let jargonWords =
 {
     syntax: "rules of typing the language",
     paradigm: "way of thinking or doing",
-    bandwidth: "amount of data that can be transmitted"
+    bandwidth: "amount of data that can be transmitted",
+    refactoring: "modifying source code to improve it",
+    algorithm: "list of instructions that solves a problem",
+    parse: "transforming data in a more workable way",
+    boilerplate: "collection of code snippets/assets that can be reused",
+    library: "collection of files/functions that can be referenced",
+    cdn: "content delivery network",
+    git: "version control system to track changes",
+    repository: "folder that contains all project files",
+    repo: "shorthand for 'repository'"
 }
 let jargon = Object.keys(jargonWords);
 
 function translate()
 {
-    for (let i = 0; i < text.length; i++)
+    for (let i = 0; i < TEXT.length; i++)
     {
-        let element = text[i];
+        let element = TEXT[i];
         let allText = element.innerText.toLowerCase().split(" ");
         for (let k = 0; k < allText.length; k++)
         {
