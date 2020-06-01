@@ -1,0 +1,16 @@
+{
+  "name": "Jargon-Translator",
+  "description": "Translate all that confusing Jargon!",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": ["js/Jargon/Computer-Science-Jargon.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "author": "Chace DeLoach"
+}
