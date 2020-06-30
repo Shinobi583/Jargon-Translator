@@ -17,7 +17,8 @@ let jargonWords =
     cdn: "content delivery network",
     git: "version control system to track changes",
     repository: "folder that contains all project files",
-    repo: "shorthand for 'repository'"
+    repo: "shorthand for 'repository'",
+    pseudocode: "solving a problem using human terms first"
 }
 let jargon = Object.keys(jargonWords);
 
