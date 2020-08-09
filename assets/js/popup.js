@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function ()
 {
+    let select = document.getElementById("selection");
     document.getElementById("translate").addEventListener("click", onClick);
 
     function onClick() {
-        chrome.tabs.query({ currentWindow: true, active: true },
-            function (tabs) {
-                chrome.tabs.sendMessage(tabs[0].id, "clicked");
-            });
+        let value = select.options[select.selectedIndex].value;
+
+        chrome.runtime.sendMessage(value);
     }
 });
