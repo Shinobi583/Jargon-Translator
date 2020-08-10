@@ -1,6 +1,6 @@
 {
   "name": "Jargon-Translator",
-  "description": "Translate all that confusing Jargon for Computer Science!",
+  "description": "Translate all that confusing Jargon!",
   "version": "1.0.0",
   "manifest_version": 2,
   "background": {
