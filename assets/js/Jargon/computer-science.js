@@ -2,7 +2,7 @@ csTranslate();
 
 function csTranslate()
 {
-    const TEXT = document.querySelectorAll("h1, h2, h3, h4, h5, h6, span, a, p, li, td, caption");
+    const TEXT = document.querySelectorAll("h1, h2, h3, h4, h5, h6, span, a, p, li, td, caption, b, strong, em");
 
     let jargonWords =
     {
@@ -34,13 +34,19 @@ function translate(TEXT, jargon, jargonWords)
         for (let j = 0; j < allText.length; j++)
         {
             let word = allText[j];
-            let wordRegExp = new RegExp(word, 'gi');
             for (let k = 0; k < jargon.length; k++)
             {
                 let val = jargonWords[jargon[k]];
                 if (word === jargon[k])
                 {
-                    document.body.innerHTML = document.body.innerHTML.replace(wordRegExp, val);
+                    let span = document.createElement("span");
+                    let textNode = document.createTextNode(val);
+                    span.appendChild(textNode);
+                    let wordIndex = element.innerHTML.indexOf(word);
+                    let wordIndeces = wordIndex + word.length + 1;
+                    let beginningText = element.innerHTML.substring(0, wordIndeces);
+                    let endingText = element.innerHTML.substring(wordIndeces);
+                    element.innerHTML = `${beginningText} <span style='color: black; background: rgba(192, 232, 67, 0.8);'>${val}</span>${endingText}`;
                 }
             }
         }
