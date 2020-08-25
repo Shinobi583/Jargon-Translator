@@ -2,3 +2,4 @@
 *.suo
 *.sqlite
 *.vscode
+*.DS_Store
