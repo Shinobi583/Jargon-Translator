@@ -42,11 +42,14 @@ function translate(TEXT, jargon, jargonWords)
                     let span = document.createElement("span");
                     let textNode = document.createTextNode(val);
                     span.appendChild(textNode);
-                    let wordIndex = element.innerHTML.indexOf(word);
+                    let style = document.createAttribute("style");
+                    style.value = "color: black; background: rgba(192, 232, 67, 0.8);";
+                    span.setAttributeNode(style);
+                    let wordIndex = element.innerText.indexOf(word);
                     let wordIndeces = wordIndex + word.length + 1;
-                    let beginningText = element.innerHTML.substring(0, wordIndeces);
-                    let endingText = element.innerHTML.substring(wordIndeces);
-                    element.innerHTML = `${beginningText} <span style='color: black; background: rgba(192, 232, 67, 0.8);'>${val}</span>${endingText}`;
+                    let beginningText = element.innerText.substring(0, wordIndeces);
+                    let endingText = element.innerText.substring(wordIndeces);
+                    element.innerHTML = `${beginningText} ${span.outerHTML} ${endingText}`;
                 }
             }
         }
