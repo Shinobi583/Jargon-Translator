@@ -2,6 +2,7 @@
 
 The Jargon Translator is meant to help lessen the confusion and increase understanding when reading Documentation, Articles, or anything related to a specific field.
 
-The <em>initial</em> idea is to have key-value pairs that would swap out any word or phrase with another word or phrase in simple human terms. The new word/phrase would be highlighted so the user knows some Jargon was replaced.
+Replace confusing terms with a translation in your own words! For now, to create a new field of study, just copy one of the existing <em>field</em>.js files
+and then switch out some of the info! Including the function names.
 
 Let's work together to make things easier to understand and to learn!
