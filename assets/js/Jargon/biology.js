@@ -22,13 +22,22 @@ function translate(TEXT, jargon, jargonWords)
         for (let j = 0; j < allText.length; j++)
         {
             let word = allText[j];
-            let wordRegExp = new RegExp(word, 'gi');
             for (let k = 0; k < jargon.length; k++)
             {
                 let val = jargonWords[jargon[k]];
                 if (word === jargon[k])
                 {
-                    document.body.innerHTML = document.body.innerHTML.replace(wordRegExp, val);
+                    let span = document.createElement("span");
+                    let textNode = document.createTextNode(val);
+                    span.appendChild(textNode);
+                    let style = document.createAttribute("style");
+                    style.value = "color: black; background: rgba(192, 232, 67, 0.8);";
+                    span.setAttributeNode(style);
+                    let wordIndex = element.innerText.indexOf(word);
+                    let wordIndeces = wordIndex + word.length + 1;
+                    let beginningText = element.innerText.substring(0, wordIndeces);
+                    let endingText = element.innerText.substring(wordIndeces);
+                    element.innerHTML = `${beginningText} ${span.outerHTML} ${endingText}`;
                 }
             }
         }
