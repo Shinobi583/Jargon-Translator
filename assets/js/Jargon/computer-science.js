@@ -25,11 +25,11 @@ function csTranslate()
     translate(TEXT, jargon, jargonWords);
 }
 
-function translate(TEXT, jargon, jargonWords)
+function translate(text, jargon, jargonWords)
 {
-    for (let i = 0; i < TEXT.length; i++)
+    for (let i = 0, length = text.length; i < length; i++)
     {
-        let element = TEXT[i];
+        let element = text[i];
         let allText = element.innerText.toLowerCase().split(" ");
         for (let j = 0; j < allText.length; j++)
         {
